@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 ">
     <h1 class="text-2xl">{{ leftOperand }} {{operators}} {{ rightOperand }}</h1>
     <div class="flex gap-5">
       <button v-for="answer of answers" :key="answer" class="bg-[#1a434d] w-full p-3 h-[80px] text-white align-top rounded text-2xl leading-6 capitalize">{{ answer }}</button>
-      <!-- <button v-if="isStarted" class="bg-[#1a434d] w-full p-3 h-[80px] text-white align-top rounded text-2xl leading-6 capitalize">{{ lastanswer }}</button> -->
+      <button v-if="isStarted" class="bg-[#1a434d] w-full p-3 h-[80px] text-white align-top rounded text-2xl leading-6 capitalize">{{ lastanswer }}</button>
     </div>
     <div class="flex items-center justify-center gap-6 w-full">
       <button @click="startQuiz" v-if="!isStarted"
