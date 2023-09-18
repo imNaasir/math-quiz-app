@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-8 ">
     <h1 class="text-2xl">{{ leftOperand }} {{ operators }} {{ rightOperand }}</h1>
-    <div class="flex gap-5 ">
+    <div class="grid grid-cols-4 gap-4 ">
       <button @click="selectedAnswer" v-for="(answer, index) of answers" :key="index"
         class="bg-[#417079] w-full p-3 h-[80px] text-white align-top rounded text-2xl leading-6 capitalize">{{ answer
         }}</button>
@@ -70,7 +70,7 @@ export default {
         "+": (a, b) => a + b,
         "-": (a, b) => a - b,
         "*": (a, b) => a * b,
-        "/": (a, b) => a / b,
+        "/": (a, b) => Math.floor(a / b),
       }
 
       const methodToUse = methods[this.operators]
